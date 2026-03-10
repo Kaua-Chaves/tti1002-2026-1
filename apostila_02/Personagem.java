@@ -2,9 +2,21 @@ package apostila_02;
 
 public class Personagem {
     String nome;
-    int energia;
-    int fome;
-    int sono;
+    private int energia;
+    private int fome;
+    private int sono;
+
+    public Personagem(int energia, int fome, int sono)   {
+        if (energia>=0 && energia <=10) this.energia=energia;
+        if (fome>=0 && fome <=10) this.fome=fome;
+        if (sono>=0 && sono <=10) this.sono=sono;
+    }
+
+    public Personagem(String nome, int energia, int fome, int sono) {
+        this(energia,fome,sono);
+        this.nome = nome;
+    }
+    
 
     void cacar() {
         if (energia >= 2) {

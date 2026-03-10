@@ -1,12 +1,39 @@
 package apostila_02;
 
-public class Jogo {
-    public static void main(String[] args) {
-        Personagem personagem1 = new Personagem();
-        personagem1.nome = "João";
+import javax.swing.JOptionPane;
 
-        personagem1.cacar();
-        personagem1.comer();
-        personagem1.dormir();
+public class Jogo {
+    public static void main(String[] args) throws InterruptedException {
+        Personagem cacador = new Personagem("joão",10,0,0);
+        Personagem soneca = new Personagem(10,0,0);
+
+//        cacador.nome = "João";
+        soneca.nome = "Soneca";
+        // cacador.energia=20;
+        // System.out.println(cacador.energia);
+        // Entrada para permitir parametrizar o valor das repetições do laço for
+        int repeticoes = Integer.parseInt(JOptionPane.showInputDialog("Quantas caçadas o jogador deve realizar?"));
+
+        while (true) {
+            cacador.cacar();
+            cacador.comer();
+            cacador.dormir();
+            System.out.println("====================");
+
+            for (int i=0; i<=repeticoes;i++) {
+                cacador.cacar();
+            }
+        
+            cacador.cacar();
+            cacador.cacar();
+            cacador.cacar();
+
+//            try {
+                Thread.sleep(2000);
+/*             } catch (InterruptedException e) {
+                //System.out.println("Usuário encerrou o programa");
+                e.printStackTrace();
+            } */
+        }
     }
 }

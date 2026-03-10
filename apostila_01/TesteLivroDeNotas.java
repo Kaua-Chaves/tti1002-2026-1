@@ -1,6 +1,7 @@
 package apostila_01;
 
 import javax.swing.JOptionPane;
+import apostila_02.Personagem;
 
 public class TesteLivroDeNotas {
     public static void main(String[] args) {
