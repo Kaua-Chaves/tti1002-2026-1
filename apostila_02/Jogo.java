@@ -4,8 +4,8 @@ import javax.swing.JOptionPane;
 
 public class Jogo {
     public static void main(String[] args) throws InterruptedException {
-        Personagem cacador = new Personagem("joão",10,0,0);
-        Personagem soneca = new Personagem(10,0,0);
+        Personagem cacador = new Personagem("joão",10,1,1);
+        Personagem soneca = new Personagem(10,1,2);
 
 //        cacador.nome = "João";
         soneca.nome = "Soneca";
@@ -14,19 +14,25 @@ public class Jogo {
         // Entrada para permitir parametrizar o valor das repetições do laço for
         int repeticoes = Integer.parseInt(JOptionPane.showInputDialog("Quantas caçadas o jogador deve realizar?"));
 
-        while (true) {
+//        while (true) {
+        for (int i = 0; i <= repeticoes; i++) {
             cacador.cacar();
+            cacador.exibirEstado();
             cacador.comer();
+            cacador.exibirEstado();
             cacador.dormir();
-            System.out.println("====================");
+            cacador.exibirEstado();
+            // System.out.println("====================");
 
-            for (int i=0; i<=repeticoes;i++) {
-                cacador.cacar();
-            }
+            cacador.cacar();
+            cacador.exibirEstado();
         
             cacador.cacar();
+            cacador.exibirEstado();
             cacador.cacar();
+            cacador.exibirEstado();
             cacador.cacar();
+            cacador.exibirEstado();
 
 //            try {
                 Thread.sleep(2000);

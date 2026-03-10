@@ -47,4 +47,11 @@ public class Personagem {
         }
     }
 
+    void exibirEstado() {
+        System.out.println("Personagem: " + nome);
+        System.out.println("Energia: " + energia);
+        System.out.println("Fome: " + fome);
+        System.out.println("Sono: " + sono);
+    }
+
 }
